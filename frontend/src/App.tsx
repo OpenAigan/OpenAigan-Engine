@@ -6,7 +6,7 @@ import { Tabs, Tab } from "@mui/material";
 import SettingsIcon from "@mui/icons-material/Settings";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 // More MUI Components
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, Switch } from "@mui/material";
 // Custom Components
 import SettingsTab from "./components/SettingsTab";
 import ControlTab from "./components/ControlTab";
@@ -29,8 +29,20 @@ const App = () => {
 
 			{/* Parent container with flexbox */}
 			<Box sx={{ display: "flex", height: "100vh" }}>
+				{/* 
+				
+				*/}
+
 				{/* DEV GUI */}
-				<Box sx={{ flex: 1, width: "40%" }}>
+				<Box
+					sx={{
+						flex: 1,
+						width: "40%",
+						display: "flex",
+						flexDirection: "column",
+						justifyContent: "space-between",
+					}}
+				>
 					{/* Tab Navigation */}
 					{/* Icons from MUI: https://mui.com/material-ui/material-icons/ */}
 					<Tabs value={activeTab} onChange={handleChange}>
@@ -47,8 +59,8 @@ const App = () => {
 						<Tab label="{bot}" />
 					</Tabs>
 
-					{/* Tab Panels */}
-					<Box sx={{ margin: 2 }}>
+					{/* Tab Content */}
+					<Box sx={{ flex: 1, margin: 2 }}>
 						<Box hidden={activeTab !== 0}>
 							<SettingsTab />
 						</Box>
@@ -57,6 +69,36 @@ const App = () => {
 						</Box>
 						<Box hidden={activeTab !== 2}>
 							<BotTab />
+						</Box>
+					</Box>
+
+					{/* Bottom Box */}
+					<Box
+						sx={{
+							padding: 2,
+							borderTop: 1,
+							borderColor: "divider",
+							textAlign: "center",
+							display: "flex",
+							justifyContent: "space-between",
+							alignItems: "center",
+						}}
+					>
+						{/* Engine Version */}
+						<Typography variant="body1">ver0.01</Typography>
+
+						{/* Slide Toggle for simulation only */}
+						<Box
+							sx={{
+								display: "flex",
+								alignItems: "center",
+								gap: 1,
+							}}
+						>
+							<Typography variant="body2">
+								Simulation Only
+							</Typography>
+							<Switch />
 						</Box>
 					</Box>
 				</Box>
