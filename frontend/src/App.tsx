@@ -16,6 +16,16 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import * as palettes from "./styles/MUI_palettes";
 
+// Assets
+// Ensure /assets is beside /frontend
+import meta from "../../assets/meta.json";
+
+// Quick thank you
+console.log("Thank you for using OpenAigan - " + meta.version + "!");
+console.log("Made by " + meta.author);
+console.log("Supporting bot types: " + meta.supported);
+
+// Bacl to main app
 const App = () => {
 	const [activeTab, setActiveTab] = useState<number>(0);
 
@@ -85,7 +95,7 @@ const App = () => {
 						}}
 					>
 						{/* Engine Version */}
-						<Typography variant="body1">ver0.01</Typography>
+						<Typography variant="body1">{meta.version}</Typography>
 
 						{/* Slide Toggle for simulation only */}
 						<Box
