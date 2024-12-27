@@ -1,0 +1,8 @@
+{
+    "root_settings": {
+        "selected_robot": "Hexapod"
+    },
+    "devgui_settings": {
+        "theme": "light"
+    }
+}

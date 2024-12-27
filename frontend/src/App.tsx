@@ -70,7 +70,7 @@ const App = () => {
 					</Tabs>
 
 					{/* Tab Content */}
-					<Box sx={{ flex: 1, margin: 2 }}>
+					<Box sx={{ flex: 1 }}>
 						<Box hidden={activeTab !== 0}>
 							<SettingsTab />
 						</Box>
