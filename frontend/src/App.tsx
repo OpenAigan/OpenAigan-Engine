@@ -23,7 +23,7 @@ import meta from "../../assets/meta.json";
 // Quick thank you
 console.log("Thank you for using OpenAigan - " + meta.version + "!");
 console.log("Made by " + meta.author);
-console.log("Supporting bot types: " + meta.supported);
+console.log("Supporting bot types: " + meta.supported.join(", "));
 
 // Bacl to main app
 const App = () => {
